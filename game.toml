@@ -1,0 +1,56 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Spider-Man 2: Enter Electro"
+id = "SLUS-01378"
+players = 2
+exe = "disc/SLUS_013.78"
+disc = "disc/Spider-Man 2 - Enter - Electro (USA) (Rev 1).cue"
+load_address = "0x80010000"
+entry_pc = "0x80093C68"
+text_size = "0x000BF800"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Spider-Man 2 - Enter - Electro (USA) (Rev 1).bin"
+cue_name = "Spider-Man 2 - Enter - Electro (USA) (Rev 1).cue"
+boot_exe = "SLUS_013.78"
+known_sizes = [717414096]
+known_md5 = [
+  "d4661873701762fd3277fc59702e15ce",
+]
+known_sha1 = [
+  "135ccc4b075ac2c348d2240605ed4266a73c0e42",
+]
+known_crc32 = [
+  "42368537",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH1001.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+window_title = "Spider-Man 2: Enter Electro Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 1
+required_disc_fp = "446d6097d5805b6e9ec8315d2f2443f9813d7ea5128f73ef984d22875cd488f3"

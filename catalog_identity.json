@@ -1,0 +1,48 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "Spider-Man 2: Enter Electro",
+    "id": "SLUS-01378",
+    "boot_exe": "SLUS_013.78"
+  },
+  "marketing": {
+    "description": "",
+    "publisher": "",
+    "year": "",
+    "region": "USA",
+    "players": 2
+  },
+  "rom_identity": {
+    "cue_name": "Spider-Man 2 - Enter - Electro (USA) (Rev 1).cue",
+    "bin_name": "Spider-Man 2 - Enter - Electro (USA) (Rev 1).bin",
+    "track_counts": [
+      1
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 717414096,
+      "md5": "d4661873701762fd3277fc59702e15ce",
+      "sha1": "135ccc4b075ac2c348d2240605ed4266a73c0e42",
+      "crc32": "42368537"
+    },
+    "disc_fp": "446d6097d5805b6e9ec8315d2f2443f9813d7ea5128f73ef984d22875cd488f3"
+  },
+  "exe": {
+    "load_address": "0x80010000",
+    "entry_pc": "0x80093C68",
+    "text_size": "0x000BF800",
+    "stack_base": "0x801FFFF0"
+  },
+  "seeds": {
+    "count": 1336,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [
+    "cue has only 1 TRACK \u2014 Track-01-only dumps fail multi-track netplay/catalog gates; prefer a full Redump cue."
+  ],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}
